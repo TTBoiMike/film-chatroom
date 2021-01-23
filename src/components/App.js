@@ -29,6 +29,18 @@ class Chatroom extends Component {
     })
   }
 
+  handleReactions = (reaction, id) => {
+    let posts = this.state.publishedPosts
+    if(reaction === "like") {
+      posts[id].likes ++
+    } else {
+      posts[id].dislikes ++ 
+    }
+    this.setState({
+      publishedPosts: posts
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -37,7 +49,7 @@ class Chatroom extends Component {
         </Navbar>
         <main className="container">
           <Create addpost={this.addNewPost}/>
-          <Post posts={this.state.publishedPosts}/>
+          <Post posts={this.state.publishedPosts} reaction={this.handleReactions}/>
         </main>
       </div>
     )

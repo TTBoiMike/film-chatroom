@@ -42,6 +42,7 @@ class Create extends Component {
           id="description"
           name="description"
           placeholder="About the film"
+          maxlength="150"
         ></textarea>
         <button className="btn btn-primary" type="submit">
           Post
