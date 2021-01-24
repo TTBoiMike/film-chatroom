@@ -27,13 +27,14 @@ class Create extends Component {
       description: "",
       genre: ""
     })
+    document.getElementById("create-form").reset()
   };
 
   render() {
     return (
       <div className="form-container p-4">
         <h2 className="mb-3">Tell us about a film...</h2>
-        <form className="d-flex flex-column" onChange={(e) => this.handleChange(e)} onSubmit={(e) => this.handleSubmit(e)}>
+        <form id="create-form" className="d-flex flex-column" onChange={(e) => this.handleChange(e)} onSubmit={(e) => this.handleSubmit(e)}>
           <input className="mb-3 rounded form-control" type="text" name="name" id="name" placeholder="Name" required></input>
           <input className="mb-3 rounded form-control" type="text" name="filmTitle" id="filmTitle" placeholder="Film title" required ></input>
           <select className="mb-3 form-control" name="genre" id="genre">
@@ -49,8 +50,8 @@ class Create extends Component {
               <option value="Sci-Fi">Sci-Fi</option>
               <option value="Thriller">Thriller</option>
           </select>
-          <label className="font-weight-bold" for="rating">Your rating - {this.state.rating} {this.state.rating > 1 ? "stars" : "star"}</label>
-          <input className="mb-3 rounded form-control" type="range" id="rating" name="rating" min="1" max="10" step="1"/>
+          <label className="font-weight-bold text-muted" for="rating">Your rating - {this.state.rating} {this.state.rating == 1 ? "star" : "stars"}</label>
+          <input className="mb-3" type="range" id="rating" name="rating" min="0" max="10"/>
           <textarea className="mb-3 rounded form-control" rows="3" id="description" name="description" placeholder="About the film" maxLength="75" required ></textarea>
           <button className="btn btn-warning text-light font-weight-bold" type="submit">
             Post

@@ -42,7 +42,7 @@ class Post extends React.Component {
 
     render() {
         return(
-            <section className="p-4 timeline">
+            <section className="timeline p-4">
                 {this.buildPostHtml()}
             </section>
         )
