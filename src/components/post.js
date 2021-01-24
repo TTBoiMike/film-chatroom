@@ -7,9 +7,12 @@ import ThumbDown from '../assets/thumbs-down-solid.svg'
 class Post extends React.Component {
 
     buildPostHtml = () => {
-        return this.props.posts.map(post => {
+        if(this.props.posts.length == 0) {
+            return (<h3 className="text-muted">Sorry, no films to show :(</h3>)
+        } else {
+            return this.props.posts.map(post => {
             return (
-                <article key={post.id} className="rounded bg-primary p-4">
+                <article key={post.id} className="rounded bg-primary p-4 mb-4">
                     <div className="d-flex justify-content-between font-weight-bold text-light">
                         <p>{post.name}</p>
                         <p>{post.date}</p>
@@ -17,6 +20,8 @@ class Post extends React.Component {
                     <div className="post-body my-2">
                         <div className="bg-light p-3 rounded">
                             <h4 className="font-weight-bold">{post.filmTitle}</h4>
+                            <p>Rating - {post.rating} {post.rating > 1 ? "stars": "star"}</p>
+                            <p>Genre - {post.genre}</p>
                             <p>{post.description}</p>
                         </div>
                     </div>
@@ -25,20 +30,21 @@ class Post extends React.Component {
                             <img id="like" className="mr-3" src={ThumbUp} alt="thumb up" />
                             <img id="dislike" src={ThumbDown} alt="thumb down" />
                         </div>
-                        <p className="text-light font-weight-bold">{post.likes} likes vs {post.dislikes} dislikes</p>
+                        <p className="text-light font-weight-bold">{post.likes} {post.likes > 1 ? "likes": "like"} vs {post.dislikes} {post.dislikes > 1 ? "dislikes": "dislike"}</p>
                     </div>
                 </article>
             )    
         })
+        }
     }
 
 
 
     render() {
         return(
-            <div className="timeline">
+            <section className="p-4 timeline">
                 {this.buildPostHtml()}
-            </div>
+            </section>
         )
     }
 }
