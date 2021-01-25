@@ -6,6 +6,9 @@
 p, h5 {
   margin: 0px;
 }
+.small-font {
+  font-size: 0.7rem;
+}
 .form-container {
   position: relative;
   top: 56px;

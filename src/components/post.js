@@ -57,13 +57,13 @@ class Post extends React.Component {
                             <img className="mr-2" src={this.postIcon(post.streaming_site)} />
                             <div>
                                 <p>{post.name}</p>
-                                <p>{post.date}</p>
+                                <p className="small-font">{post.date}</p>
                             </div>
                         </div>
                         <div>
                             <h5 className="font-weight-bold">{post.filmTitle}</h5>
                             <div>
-                                <p>{post.genre} | Rating - {post.rating} stars </p>
+                                <p className="small-font">{post.genre} | Rating - {post.rating} stars </p>
                             </div>
                         </div>
                     </section>
