@@ -2,9 +2,48 @@ import React from 'react'
 import '../App.css';
 import ThumbUp from '../assets/thumbs-up-solid.svg'
 import ThumbDown from '../assets/thumbs-down-solid.svg'
+import appletv from '../assets/logos/appletv.png'
+import bbc from '../assets/logos/bbc.png'
+import channel4 from '../assets/logos/channel4.png'
+import disney from '../assets/logos/disney.png'
+import hbo from '../assets/logos/hbo.png'
+import itv from '../assets/logos/itv.png'
+import netflix from '../assets/logos/netflix.png'
+import nowtv from '../assets/logos/nowtv.png'
+import prime from '../assets/logos/prime.png'
+import sky from '../assets/logos/sky.png'
+import youtube from '../assets/logos/youtube.png'
+
 
 
 class Post extends React.Component {
+
+    postIcon = (channel) => {
+        switch(channel) {
+            case "Apple TV":
+                return appletv
+            case "BBC":
+                return bbc
+            case "Channel 4":
+                return channel4
+            case "Disney+":
+                return disney
+            case "HBO":
+                return hbo
+            case "ITV":
+                return itv
+            case "Netflix":
+                return netflix
+            case "Now TV":
+                return nowtv
+            case "Prime Video":
+                return prime
+            case "Sky":
+                return sky
+            case "Youtube":
+                return youtube
+        }
+    }
 
     buildPostHtml = () => {
         if(this.props.posts.length === 0) {
@@ -12,25 +51,31 @@ class Post extends React.Component {
         } else {
             return this.props.posts.map(post => {
             return (
-                <article key={post.id} className="rounded bg-primary p-4 mb-4">
-                    <div className="d-flex justify-content-between font-weight-bold text-light">
-                        <p>{post.name}</p>
-                        <p>{post.date}</p>
-                    </div>
-                    <div className="post-body my-2">
-                        <div className="bg-light p-3 rounded">
-                            <h4 className="font-weight-bold">{post.filmTitle}</h4>
-                            <p>Rating - {post.rating} {post.rating > 1 ? "stars": "star"}</p>
-                            <p>Genre - {post.genre}</p>
-                            <p>{post.streaming_site}</p>
+                <article key={post.id} className="d-flex justify-content-between bg-secondary align-items-center text-light p-4 mb-4">
+                    <section className="d-flex align-items-center">
+                        <div className="d-flex align-items-center mr-4">
+                            <img className="mr-2" src={this.postIcon(post.streaming_site)} />
+                            <div>
+                                <p>{post.name}</p>
+                                <p>{post.date}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="d-flex justify-content-between">
-                        <div id={post.id} onClick={(e) => this.props.reaction(e.target.id, e.currentTarget.id)}>
-                            <img id="like" className="mr-3" src={ThumbUp} alt="thumb up" />
-                            <img id="dislike" src={ThumbDown} alt="thumb down" />
+                        <div>
+                            <h5 className="font-weight-bold">{post.filmTitle}</h5>
+                            <div>
+                                <p>{post.genre} | Rating - {post.rating} stars </p>
+                            </div>
                         </div>
-                        <p className="text-light font-weight-bold">{post.likes} {post.likes > 1 ? "likes": "like"} vs {post.dislikes} {post.dislikes > 1 ? "dislikes": "dislike"}</p>
+                    </section>
+                    <div id={post.id} onClick={(e) => this.props.reaction(e.target.id, e.currentTarget.id)}>
+                        <div className="mb-2"> 
+                            <img id="like" className="mr-2" src={ThumbUp} alt="thumb up - like"/> 
+                            {post.likes}
+                        </div>
+                        <div> 
+                            <img id="dislike" className="mr-2" src={ThumbDown} alt="thumb down - dislike" /> 
+                            {post.dislikes}
+                        </div>
                     </div>
                 </article>
             )    

@@ -3,7 +3,7 @@
   margin: 0;
   box-sizing: border-box;
 }
-p {
+p, h5 {
   margin: 0px;
 }
 .form-container {
@@ -22,14 +22,15 @@ article {
 .post-body {
   width: 100%;
 }
-img {
+#like, #dislike {
   height: 20px;
 }
-
-
 @media screen and (min-width: 1000px) {
   main {
     display: flex;
+  }
+  article {
+    width: 75%;
   }
   .form-container {
     height: 100vh;
@@ -44,8 +45,5 @@ img {
     margin-top: 56px;
     margin-left: 30vw;
     flex: 1;
-    display: flex;
-    flex-flow: wrap;
-
   }
 }

@@ -4,7 +4,6 @@ import '../App.css';
 import Create from './create'
 import Post from './post'
 import Nav from './navbar'
-import db from '../firebase'
 
 class Chatroom extends Component {
   constructor() {
@@ -13,10 +12,6 @@ class Chatroom extends Component {
       allPosts: [],
       publishedPosts: []
     }
-  }
-
-  componentDidMount() {
-    // db.collection('posts')
   }
 
   addNewPost = ( postObj ) => {

@@ -28,7 +28,6 @@ class Create extends Component {
       where_to_watch: "",
       genre: ""
     })
-    document.getElementById("create-form").reset()
   };
 
   render() {
@@ -65,7 +64,7 @@ class Create extends Component {
               <option value="Sky">Sky</option>
               <option value="Youtube">Youtube</option>
           </select>
-          <label className="font-weight-bold text-muted" for="rating">Your rating - {this.state.rating} {this.state.rating === 1 ? "star" : "stars"}</label>
+          <label className="font-weight-bold text-muted" for="rating">Your rating - {this.state.rating} {this.state.rating == 1 ? "star" : "stars"}</label>
           <input className="mb-3" type="range" id="rating" name="rating" min="0" max="10"/>
           <button className="btn btn-warning text-light font-weight-bold" type="submit">
             Post
