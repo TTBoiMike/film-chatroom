@@ -7,7 +7,7 @@ import ThumbDown from '../assets/thumbs-down-solid.svg'
 class Post extends React.Component {
 
     buildPostHtml = () => {
-        if(this.props.posts.length == 0) {
+        if(this.props.posts.length === 0) {
             return (<h3 className="text-muted">Sorry, no films to show :(</h3>)
         } else {
             return this.props.posts.map(post => {
@@ -22,7 +22,7 @@ class Post extends React.Component {
                             <h4 className="font-weight-bold">{post.filmTitle}</h4>
                             <p>Rating - {post.rating} {post.rating > 1 ? "stars": "star"}</p>
                             <p>Genre - {post.genre}</p>
-                            <p>{post.description}</p>
+                            <p>{post.streaming_site}</p>
                         </div>
                     </div>
                     <div className="d-flex justify-content-between">

@@ -48,8 +48,4 @@ img {
     flex-flow: wrap;
 
   }
-  article {
-    width: 30%;
-    margin: 1em;
-  }
 }

@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import {Navbar} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../App.css';
 import Create from './create'
 import Post from './post'
+import Nav from './navbar'
+import db from '../firebase'
 
 class Chatroom extends Component {
   constructor() {
@@ -12,6 +13,10 @@ class Chatroom extends Component {
       allPosts: [],
       publishedPosts: []
     }
+  }
+
+  componentDidMount() {
+    // db.collection('posts')
   }
 
   addNewPost = ( postObj ) => {
@@ -46,12 +51,27 @@ class Chatroom extends Component {
   filterPosts = (event) => {
     event.preventDefault()
     let genre = event.currentTarget.genre.value;
-    if(genre === "All") {
+    let streamingSite = event.currentTarget.streaming_site.value
+    let filteredPosts = []
+    console.log(genre, streamingSite)
+    if(genre === "All"  && streamingSite === "All") {
       this.setState((state) => ({
         publishedPosts: state.allPosts
       }))
+    } else if (genre === "All" && streamingSite !== "All") {
+      filteredPosts = this.state.allPosts.filter(post => post.streaming_site === streamingSite)
+      this.setState({
+        publishedPosts: filteredPosts
+      })
+    } else if(genre !== "All" && streamingSite === "All") {
+      filteredPosts = this.state.allPosts.filter(post => post.genre === genre)
+      this.setState({
+        publishedPosts: filteredPosts
+      })
     } else {
-      let filteredPosts = this.state.allPosts.filter(post => post.genre === genre)
+      filteredPosts = this.state.allPosts.filter(post => {
+        return post.genre == genre && post.streaming_site == streamingSite
+      })
       this.setState({
         publishedPosts: filteredPosts
       })
@@ -59,27 +79,10 @@ class Chatroom extends Component {
   }
 
   render() {
+    console.log(this.state)
     return (
       <div className="App">
-        <Navbar className="d-flex justify-content-between bg-primary fixed-top">
-          <Navbar.Brand className="text-light font-weight-bold">Film Chatroom</Navbar.Brand>
-            <form class="d-flex align-items-center" onSubmit={(e) => this.filterPosts(e)}>
-              <select className="form-control mr-4" name="genre" id="genre">
-                  <option value="All">All Films</option>
-                  <option value="Adventure">Adventure</option>
-                  <option value="Action">Action</option>
-                  <option value="Childrens">Childrens</option>
-                  <option value="Comedy">Comedy</option>
-                  <option value="Crime">Crime</option>
-                  <option value="Drama">Drama</option>
-                  <option value="Horror">Horror</option>
-                  <option value="Romance">Romance</option>
-                  <option value="Sci-Fi">Sci-Fi</option>
-                  <option value="Thriller">Thriller</option>
-              </select>
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </Navbar>
+        <Nav filterposts={this.filterPosts}/>
         <main>
           <Create addpost={this.addNewPost}/>
           <Post posts={this.state.publishedPosts} reaction={this.handleReactions}/>

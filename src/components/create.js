@@ -8,6 +8,7 @@ class Create extends Component {
       filmTitle: "",
       rating: 10,
       description: "",
+      streaming_site: ""
     };
   }
 
@@ -24,7 +25,7 @@ class Create extends Component {
       name: "",
       filmTitle: "",
       rating: 0,
-      description: "",
+      where_to_watch: "",
       genre: ""
     })
     document.getElementById("create-form").reset()
@@ -50,9 +51,22 @@ class Create extends Component {
               <option value="Sci-Fi">Sci-Fi</option>
               <option value="Thriller">Thriller</option>
           </select>
-          <label className="font-weight-bold text-muted" for="rating">Your rating - {this.state.rating} {this.state.rating == 1 ? "star" : "stars"}</label>
+          <select className="mb-3 form-control" name="streaming_site" id="streaming_site">
+              <option value="">--Where to watch--</option>
+              <option value="Apple TV">Apple TV</option>
+              <option value="BBC">BBC</option>
+              <option value="Channel 4">Channel 4</option>
+              <option value="Disney+">Disney+</option>
+              <option value="HBO">HBO</option>
+              <option value="Itv">Itv</option>
+              <option value="Netflix">Netflix</option>
+              <option value="Now TV">Now TV</option>
+              <option value="Prime Video">Prime Video</option>
+              <option value="Sky">Sky</option>
+              <option value="Youtube">Youtube</option>
+          </select>
+          <label className="font-weight-bold text-muted" for="rating">Your rating - {this.state.rating} {this.state.rating === 1 ? "star" : "stars"}</label>
           <input className="mb-3" type="range" id="rating" name="rating" min="0" max="10"/>
-          <textarea className="mb-3 rounded form-control" rows="3" id="description" name="description" placeholder="About the film" maxLength="75" required ></textarea>
           <button className="btn btn-warning text-light font-weight-bold" type="submit">
             Post
           </button>
