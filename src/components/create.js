@@ -20,6 +20,7 @@ class Create extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    console.log(event.currentTarget)
     this.props.addpost(this.state)
     this.setState({
       name: "",
@@ -28,12 +29,16 @@ class Create extends Component {
       where_to_watch: "",
       genre: ""
     })
+    event.currentTarget.name.value = ""
+    event.currentTarget.filmTitle.value = ""
+    event.currentTarget.genre.value = ""
+    event.currentTarget.streaming_site.value = ""
   };
 
   render() {
     return (
       <div className="form-container p-4">
-        <h2 className="mb-3">Tell us about a film...</h2>
+        <h2 className="mb-3 text-muted">Tell us about a film...</h2>
         <form id="create-form" className="d-flex flex-column" onChange={(e) => this.handleChange(e)} onSubmit={(e) => this.handleSubmit(e)}>
           <input className="mb-3 rounded form-control" type="text" name="name" id="name" placeholder="Name" required></input>
           <input className="mb-3 rounded form-control" type="text" name="filmTitle" id="filmTitle" placeholder="Film title" required ></input>

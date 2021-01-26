@@ -51,7 +51,7 @@ class Post extends React.Component {
         } else {
             return this.props.posts.map(post => {
             return (
-                <article key={post.id} className="d-flex justify-content-between bg-secondary align-items-center text-light p-4 mb-4">
+                <article key={post.id} className="bg-secondary rounded text-light p-4 mb-4">
                     <section className="d-flex align-items-center">
                         <div className="d-flex align-items-center mr-4">
                             <img className="mr-2" src={this.postIcon(post.streaming_site)} />

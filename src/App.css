@@ -22,18 +22,22 @@ article {
   width: 100%;
   height: fit-content;
 }
-.post-body {
-  width: 100%;
+article > section {
+  display: flex;
+  justify-content: space-between;
 }
 #like, #dislike {
   height: 20px;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 768px) {
   main {
     display: flex;
   }
   article {
     width: 75%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   .form-container {
     height: 100vh;
