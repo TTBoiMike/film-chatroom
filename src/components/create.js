@@ -25,7 +25,7 @@ class Create extends Component {
     this.setState({
       name: "",
       filmTitle: "",
-      rating: 0,
+      rating: 10,
       where_to_watch: "",
       genre: ""
     })

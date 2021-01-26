@@ -52,7 +52,6 @@ class Post extends React.Component {
             return this.props.posts.map(post => {
             return (
                 <article key={post.id} className="bg-secondary rounded text-light p-4 mb-4">
-                    <section className="d-flex align-items-center">
                         <div className="d-flex align-items-center mr-4">
                             <img className="mr-2" src={this.postIcon(post.streaming_site)} />
                             <div>
@@ -66,7 +65,6 @@ class Post extends React.Component {
                                 <p className="small-font">{post.genre} | Rating - {post.rating} stars </p>
                             </div>
                         </div>
-                    </section>
                     <div id={post.id} onClick={(e) => this.props.reaction(e.target.id, e.currentTarget.id)}>
                         <div className="mb-2"> 
                             <img id="like" className="mr-2" src={ThumbUp} alt="thumb up - like"/> 

@@ -22,10 +22,6 @@ article {
   width: 100%;
   height: fit-content;
 }
-article > section {
-  display: flex;
-  justify-content: space-between;
-}
 #like, #dislike {
   height: 20px;
 }
