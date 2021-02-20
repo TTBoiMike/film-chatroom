@@ -4,6 +4,7 @@ import '../App.css';
 import Create from './create'
 import Post from './post'
 import Nav from './navbar'
+import ApiClient from '../apiClient'
 
 class Chatroom extends Component {
   constructor() {
@@ -12,35 +13,39 @@ class Chatroom extends Component {
       allPosts: [],
       publishedPosts: []
     }
+    this.apiClient = new ApiClient()
   }
 
-  addNewPost = ( postObj ) => {
+  fetchAllFilms = async () => {
+    let films = await this.apiClient.getFilms();
+    this.setState({allPosts: films.data, publishedPosts: films.data})
+  }
+
+  // componentDidMount fetch events
+  componentDidMount() {
+    this.fetchAllFilms()
+  }
+
+  addNewPost = async ( postObj ) => {
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, "0");
     let mm = String(today.getMonth() + 1).padStart(2, "0");
     let yyyy = today.getFullYear();
     let date = dd + "/" + mm + "/" + yyyy;
-    let id = this.state.publishedPosts.length;
-    let likes = 0
-    let dislikes = 0;
-    let newPost = {...postObj, likes, dislikes, date, id}
-    let updatedPosts = [...this.state.publishedPosts, newPost]
-    this.setState ({
-      allPosts: updatedPosts,
-      publishedPosts: updatedPosts
-    })
+    let newFilm = {...postObj, likes: 0, dislikes: 0, date}
+    await this.apiClient.addFilm(newFilm)
+    this.fetchAllFilms()
   }
 
-  handleReactions = (reaction, id) => {
-    let posts = this.state.publishedPosts
+  handleReactions = async (reaction, id) => {
+    let filmToUpdate = this.state.allPosts.find(post => post._id === id)
     if(reaction === "like") {
-      posts[id].likes ++
+      filmToUpdate.likes += 1
     } else {
-      posts[id].dislikes ++ 
+      filmToUpdate.dislikes += 1
     }
-    this.setState({
-      publishedPosts: posts
-    })
+    await this.apiClient.updateFilmReactions(id, filmToUpdate);
+    this.fetchAllFilms()
   }
 
   filterPosts = (event) => {
@@ -48,7 +53,6 @@ class Chatroom extends Component {
     let genre = event.currentTarget.genre.value;
     let streamingSite = event.currentTarget.streaming_site.value
     let filteredPosts = []
-    console.log(genre, streamingSite)
     if(genre === "All"  && streamingSite === "All") {
       this.setState((state) => ({
         publishedPosts: state.allPosts
@@ -65,7 +69,7 @@ class Chatroom extends Component {
       })
     } else {
       filteredPosts = this.state.allPosts.filter(post => {
-        return post.genre == genre && post.streaming_site == streamingSite
+        return post.genre === genre && post.streaming_site === streamingSite
       })
       this.setState({
         publishedPosts: filteredPosts
@@ -74,7 +78,6 @@ class Chatroom extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div className="App">
         <Nav filterposts={this.filterPosts}/>

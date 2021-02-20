@@ -5,10 +5,10 @@ class Create extends Component {
     super();
     this.state = {
       name: "",
-      filmTitle: "",
+      title: "",
+      genre: "",
       rating: 10,
-      description: "",
-      streaming_site: ""
+      streamingOn: ""
     };
   }
 
@@ -20,19 +20,18 @@ class Create extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log(event.currentTarget)
     this.props.addpost(this.state)
     this.setState({
       name: "",
-      filmTitle: "",
+      title: "",
+      genre: "",
       rating: 10,
-      where_to_watch: "",
-      genre: ""
+      streamingOn: ""
     })
     event.currentTarget.name.value = ""
-    event.currentTarget.filmTitle.value = ""
+    event.currentTarget.title.value = ""
     event.currentTarget.genre.value = ""
-    event.currentTarget.streaming_site.value = ""
+    event.currentTarget.streamingOn.value = ""
   };
 
   render() {
@@ -41,7 +40,7 @@ class Create extends Component {
         <h2 className="mb-3 text-muted">Tell us about a film...</h2>
         <form id="create-form" className="d-flex flex-column" onChange={(e) => this.handleChange(e)} onSubmit={(e) => this.handleSubmit(e)}>
           <input className="mb-3 rounded form-control" type="text" name="name" id="name" placeholder="Name" required></input>
-          <input className="mb-3 rounded form-control" type="text" name="filmTitle" id="filmTitle" placeholder="Film title" required ></input>
+          <input className="mb-3 rounded form-control" type="text" name="title" id="title" placeholder="Film title" required ></input>
           <select className="mb-3 form-control" name="genre" id="genre">
               <option value="">--Select Genre--</option>
               <option value="Adventure">Adventure</option>
@@ -55,7 +54,7 @@ class Create extends Component {
               <option value="Sci-Fi">Sci-Fi</option>
               <option value="Thriller">Thriller</option>
           </select>
-          <select className="mb-3 form-control" name="streaming_site" id="streaming_site">
+          <select className="mb-3 form-control" name="streamingOn" id="streamingOn">
               <option value="">--Where to watch--</option>
               <option value="Apple TV">Apple TV</option>
               <option value="BBC">BBC</option>
