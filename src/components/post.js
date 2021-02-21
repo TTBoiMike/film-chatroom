@@ -43,6 +43,8 @@ class Post extends React.Component {
                 return sky
             case "Youtube":
                 return youtube
+            default:
+                return undefined
         }
     }
 
