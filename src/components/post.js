@@ -1,4 +1,5 @@
 import React from 'react'
+import {Table} from 'react-bootstrap';
 import '../App.css';
 import ThumbUp from '../assets/thumbs-up-solid.svg'
 import ThumbDown from '../assets/thumbs-down-solid.svg'
@@ -51,29 +52,29 @@ class Post extends React.Component {
         } else {
             return this.props.posts.map(post => {
             return (
-                <article key={post._id} className="bg-secondary rounded text-light p-4 mb-4">
+              <tr key={post._id} className="p-3">
+                  <td>
+                      <img src={this.postIcon(post.streamingOn)} alt={`${post.streamingOn} logo`}/>
+                      <p className="small-font">Posted by<br/><strong>{post.name}</strong></p>
+                  </td>
+                  <td>
+                        <h3>{post.title}</h3>
                         <div>
-                            <p>{post.name}</p>
-                            <p className="small-font">{post.date}</p>
+                            <p>Genre: {post.genre} | Rating from {post.name} is <strong>{post.rating} {post.rating !== 1 ? "stars" : "star"}</strong></p>
                         </div>
-                        <div className="post-body d-flex align-items-center">
-                            <img className="mr-2" src={this.postIcon(post.streamingOn)} />
-                            <div>
-                                <h5 className="font-weight-bold">{post.title}</h5>
-                                <p className="small-font">{post.genre} | Rating - {post.rating} stars </p>
-                            </div>
-                        </div>
-                    <div className="reaction" id={post._id} onClick={(e) => this.props.reaction(e.target.id, e.currentTarget.id)}>
-                        <div className="mb-2"> 
-                            <img id="like" className="mr-2" src={ThumbUp} alt="thumb up - like"/> 
-                            {post.likes}
-                        </div>
-                        <div> 
-                            <img id="dislike" className="mr-2" src={ThumbDown} alt="thumb down - dislike" /> 
-                            {post.dislikes}
-                        </div>
-                    </div>
-                </article>
+                  </td>
+                  <td className="reaction" id={post._id} onClick={(e) => this.props.reaction(e.target.id, e.currentTarget.id)}>
+                      <p className="mb-2 text-muted"><strong>Do you like this?</strong></p>
+                      <div className="mb-2 d-flex">
+                          <img id="like" className="mr-2" src={ThumbUp} alt="thumb up - like"/> 
+                          <p>{post.likes} {post.likes === 1 ? "like" : "likes"}</p>
+                      </div>
+                      <div className="d-flex"> 
+                          <img id="dislike" className="mr-2" src={ThumbDown} alt="thumb down - dislike" /> 
+                          <p>{post.dislikes} {post.dislikes === 1 ? "dislike" : "dislikes"}</p>
+                      </div>
+                  </td>
+              </tr>
             )    
         })
         }
@@ -84,7 +85,11 @@ class Post extends React.Component {
     render() {
         return(
             <section className="timeline p-4">
-                {this.buildPostHtml()}
+                <Table striped responsive>
+                    <tbody>
+                    {this.buildPostHtml()}
+                    </tbody>
+                </Table>
             </section>
         )
     }

@@ -15,9 +15,6 @@ p, h5 {
   background-color: lightgrey;
   border-bottom: 3px solid darkgray;
 }
-.post-body {
-  margin: 20px 0px;
-}
 .reaction {
   display: flex;
   justify-content: space-between;
