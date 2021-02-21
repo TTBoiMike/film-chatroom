@@ -1,6 +1,6 @@
 # Film Chatroom
 
-This project is a film chatroom built using React, Express and Bootstrap, and uses a MongoDB database. The brief for this project was to create a social interaction application where uses could post to a single feed and other uses were able to like different posts.
+This project is a film chatroom built using React, Express and Bootstrap, and uses a MongoDB database. The brief for this project was to create a social interaction application where users could post to a single feed and other users were able to interact with the posts by either liking and/or commenting.
 
 ### About the project
 
