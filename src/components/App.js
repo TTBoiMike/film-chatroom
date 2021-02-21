@@ -58,7 +58,7 @@ class Chatroom extends Component {
         publishedPosts: state.allPosts
       }))
     } else if (genre === "All" && streamingSite !== "All") {
-      filteredPosts = this.state.allPosts.filter(post => post.streaming_site === streamingSite)
+      filteredPosts = this.state.allPosts.filter(post => post.streamingOn === streamingSite)
       this.setState({
         publishedPosts: filteredPosts
       })
@@ -69,7 +69,7 @@ class Chatroom extends Component {
       })
     } else {
       filteredPosts = this.state.allPosts.filter(post => {
-        return post.genre === genre && post.streaming_site === streamingSite
+        return post.genre === genre && post.streamingOn === streamingSite
       })
       this.setState({
         publishedPosts: filteredPosts
