@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/film-chatroom/static/css/main.2189c07d.chunk.css",
-    "main.js": "/film-chatroom/static/js/main.0fe8dcc0.chunk.js",
-    "main.js.map": "/film-chatroom/static/js/main.0fe8dcc0.chunk.js.map",
-    "runtime-main.js": "/film-chatroom/static/js/runtime-main.1f1db5c0.js",
-    "runtime-main.js.map": "/film-chatroom/static/js/runtime-main.1f1db5c0.js.map",
+    "main.css": "/film-chatroom/static/css/main.804378b3.chunk.css",
+    "main.js": "/film-chatroom/static/js/main.70557cb8.chunk.js",
+    "main.js.map": "/film-chatroom/static/js/main.70557cb8.chunk.js.map",
+    "runtime-main.js": "/film-chatroom/static/js/runtime-main.6e8e20c4.js",
+    "runtime-main.js.map": "/film-chatroom/static/js/runtime-main.6e8e20c4.js.map",
     "static/css/2.150d169a.chunk.css": "/film-chatroom/static/css/2.150d169a.chunk.css",
-    "static/js/2.8240ff88.chunk.js": "/film-chatroom/static/js/2.8240ff88.chunk.js",
-    "static/js/2.8240ff88.chunk.js.map": "/film-chatroom/static/js/2.8240ff88.chunk.js.map",
-    "static/js/3.6e7d010c.chunk.js": "/film-chatroom/static/js/3.6e7d010c.chunk.js",
-    "static/js/3.6e7d010c.chunk.js.map": "/film-chatroom/static/js/3.6e7d010c.chunk.js.map",
+    "static/js/2.98d4fd14.chunk.js": "/film-chatroom/static/js/2.98d4fd14.chunk.js",
+    "static/js/2.98d4fd14.chunk.js.map": "/film-chatroom/static/js/2.98d4fd14.chunk.js.map",
+    "static/js/3.d7d4e511.chunk.js": "/film-chatroom/static/js/3.d7d4e511.chunk.js",
+    "static/js/3.d7d4e511.chunk.js.map": "/film-chatroom/static/js/3.d7d4e511.chunk.js.map",
     "index.html": "/film-chatroom/index.html",
     "static/css/2.150d169a.chunk.css.map": "/film-chatroom/static/css/2.150d169a.chunk.css.map",
-    "static/css/main.2189c07d.chunk.css.map": "/film-chatroom/static/css/main.2189c07d.chunk.css.map",
-    "static/js/2.8240ff88.chunk.js.LICENSE.txt": "/film-chatroom/static/js/2.8240ff88.chunk.js.LICENSE.txt",
-    "static/media/thumbs-down-solid.4e62997c.svg": "/film-chatroom/static/media/thumbs-down-solid.4e62997c.svg",
-    "static/media/thumbs-up-solid.059828fe.svg": "/film-chatroom/static/media/thumbs-up-solid.059828fe.svg"
+    "static/css/main.804378b3.chunk.css.map": "/film-chatroom/static/css/main.804378b3.chunk.css.map",
+    "static/js/2.98d4fd14.chunk.js.LICENSE.txt": "/film-chatroom/static/js/2.98d4fd14.chunk.js.LICENSE.txt",
+    "static/media/thumbs-down-solid.a3c9fce7.svg": "/film-chatroom/static/media/thumbs-down-solid.a3c9fce7.svg",
+    "static/media/thumbs-up-solid.ab0463a6.svg": "/film-chatroom/static/media/thumbs-up-solid.ab0463a6.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.1f1db5c0.js",
+    "static/js/runtime-main.6e8e20c4.js",
     "static/css/2.150d169a.chunk.css",
-    "static/js/2.8240ff88.chunk.js",
-    "static/css/main.2189c07d.chunk.css",
-    "static/js/main.0fe8dcc0.chunk.js"
+    "static/js/2.98d4fd14.chunk.js",
+    "static/css/main.804378b3.chunk.css",
+    "static/js/main.70557cb8.chunk.js"
   ]
 }
