@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/film-chatroom/static/css/main.2189c07d.chunk.css",
-    "main.js": "/film-chatroom/static/js/main.91271fa9.chunk.js",
-    "main.js.map": "/film-chatroom/static/js/main.91271fa9.chunk.js.map",
-    "runtime-main.js": "/film-chatroom/static/js/runtime-main.d3213e18.js",
-    "runtime-main.js.map": "/film-chatroom/static/js/runtime-main.d3213e18.js.map",
+    "main.js": "/film-chatroom/static/js/main.0fe8dcc0.chunk.js",
+    "main.js.map": "/film-chatroom/static/js/main.0fe8dcc0.chunk.js.map",
+    "runtime-main.js": "/film-chatroom/static/js/runtime-main.1f1db5c0.js",
+    "runtime-main.js.map": "/film-chatroom/static/js/runtime-main.1f1db5c0.js.map",
     "static/css/2.150d169a.chunk.css": "/film-chatroom/static/css/2.150d169a.chunk.css",
-    "static/js/2.e1f3aa61.chunk.js": "/film-chatroom/static/js/2.e1f3aa61.chunk.js",
-    "static/js/2.e1f3aa61.chunk.js.map": "/film-chatroom/static/js/2.e1f3aa61.chunk.js.map",
-    "static/js/3.b69a2282.chunk.js": "/film-chatroom/static/js/3.b69a2282.chunk.js",
-    "static/js/3.b69a2282.chunk.js.map": "/film-chatroom/static/js/3.b69a2282.chunk.js.map",
+    "static/js/2.8240ff88.chunk.js": "/film-chatroom/static/js/2.8240ff88.chunk.js",
+    "static/js/2.8240ff88.chunk.js.map": "/film-chatroom/static/js/2.8240ff88.chunk.js.map",
+    "static/js/3.6e7d010c.chunk.js": "/film-chatroom/static/js/3.6e7d010c.chunk.js",
+    "static/js/3.6e7d010c.chunk.js.map": "/film-chatroom/static/js/3.6e7d010c.chunk.js.map",
     "index.html": "/film-chatroom/index.html",
     "static/css/2.150d169a.chunk.css.map": "/film-chatroom/static/css/2.150d169a.chunk.css.map",
     "static/css/main.2189c07d.chunk.css.map": "/film-chatroom/static/css/main.2189c07d.chunk.css.map",
-    "static/js/2.e1f3aa61.chunk.js.LICENSE.txt": "/film-chatroom/static/js/2.e1f3aa61.chunk.js.LICENSE.txt",
+    "static/js/2.8240ff88.chunk.js.LICENSE.txt": "/film-chatroom/static/js/2.8240ff88.chunk.js.LICENSE.txt",
     "static/media/thumbs-down-solid.4e62997c.svg": "/film-chatroom/static/media/thumbs-down-solid.4e62997c.svg",
     "static/media/thumbs-up-solid.059828fe.svg": "/film-chatroom/static/media/thumbs-up-solid.059828fe.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.d3213e18.js",
+    "static/js/runtime-main.1f1db5c0.js",
     "static/css/2.150d169a.chunk.css",
-    "static/js/2.e1f3aa61.chunk.js",
+    "static/js/2.8240ff88.chunk.js",
     "static/css/main.2189c07d.chunk.css",
-    "static/js/main.91271fa9.chunk.js"
+    "static/js/main.0fe8dcc0.chunk.js"
   ]
 }
