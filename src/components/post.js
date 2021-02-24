@@ -49,8 +49,10 @@ class Post extends React.Component {
     }
 
     buildPostHtml = () => {
-        if(this.props.posts.length === 0) {
-            return (<h3 className="text-muted">Sorry, no films to show :(</h3>)
+        if(this.props.posts.length === 0 && this.props.allPosts.length === 0) {
+            return (<h3 className="text-muted">...loading chatroom</h3>)
+        } else if (this.props.posts.length === 0) {
+            return (<h3 className="text-muted">Sorry, no film or shows to see here :(</h3>)
         } else {
             return this.props.posts.map(post => {
             return (

@@ -11,7 +11,8 @@ class Chatroom extends Component {
     super();
     this.state = {
       allPosts: [],
-      publishedPosts: []
+      publishedPosts: [],
+      message: "...loading chatroom"
     }
     this.apiClient = new ApiClient()
   }
@@ -60,30 +61,31 @@ class Chatroom extends Component {
     } else if (genre === "All" && streamingSite !== "All") {
       filteredPosts = this.state.allPosts.filter(post => post.streamingOn === streamingSite)
       this.setState({
-        publishedPosts: filteredPosts
+        publishedPosts: filteredPosts,
       })
     } else if(genre !== "All" && streamingSite === "All") {
       filteredPosts = this.state.allPosts.filter(post => post.genre === genre)
       this.setState({
-        publishedPosts: filteredPosts
+        publishedPosts: filteredPosts,
       })
     } else {
       filteredPosts = this.state.allPosts.filter(post => {
         return post.genre === genre && post.streamingOn === streamingSite
       })
       this.setState({
-        publishedPosts: filteredPosts
+        publishedPosts: filteredPosts,
       })
     }
   }
 
   render() {
+    console.log(this.state)
     return (
       <div className="App">
         <Nav filterposts={this.filterPosts}/>
         <main>
           <Create addpost={this.addNewPost}/>
-          <Post posts={this.state.publishedPosts} reaction={this.handleReactions}/>
+          <Post allPosts={this.state.allPosts} posts={this.state.publishedPosts} reaction={this.handleReactions} message={this.state.message}/>
         </main>
       </div>
     )
