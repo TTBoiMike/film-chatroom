@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/film-chatroom/static/css/main.804378b3.chunk.css",
-    "main.js": "/film-chatroom/static/js/main.70557cb8.chunk.js",
-    "main.js.map": "/film-chatroom/static/js/main.70557cb8.chunk.js.map",
+    "main.js": "/film-chatroom/static/js/main.5a771f86.chunk.js",
+    "main.js.map": "/film-chatroom/static/js/main.5a771f86.chunk.js.map",
     "runtime-main.js": "/film-chatroom/static/js/runtime-main.6e8e20c4.js",
     "runtime-main.js.map": "/film-chatroom/static/js/runtime-main.6e8e20c4.js.map",
     "static/css/2.150d169a.chunk.css": "/film-chatroom/static/css/2.150d169a.chunk.css",
@@ -22,6 +22,6 @@
     "static/css/2.150d169a.chunk.css",
     "static/js/2.98d4fd14.chunk.js",
     "static/css/main.804378b3.chunk.css",
-    "static/js/main.70557cb8.chunk.js"
+    "static/js/main.5a771f86.chunk.js"
   ]
 }
